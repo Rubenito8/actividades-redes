@@ -5,7 +5,7 @@ email: ruben.gonzalez505@comunidadunir.net
 description: >- # this means to ignore newlines until "baseurl:"
  Práctica de la asignatura de Desarrollo de Aplicaciones en Red usando Jekyll y HTML/CSS.
 baseurl: "/actividades-redes"
-url: "[https://Rubenito8.github.io](https://Rubenito8.github.io)"
+url: "(https://Rubenito8.github.io)"
 github_username:  Rubenito8 
 author: Rubén González Fernández
 # Build settings
