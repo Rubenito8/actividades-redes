@@ -1,0 +1,73 @@
+---
+---
+
+@import "minima";
+
+/* 1. Definición de colores - Modo Claro (Por defecto) */
+:root {
+  --bg-color: #f9fafb;
+  --text-color: #1f2937;
+  --heading-color: #111827;
+  --link-color: #2563eb;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+}
+
+/* 2. Definición de colores - Modo Oscuro (Negro Neutro) */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --link-color: #60a5fa;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+}
+
+/* 3. Aplicación global de variables y transiciones */
+html, body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.site-header, .page-content, .site-footer, .wrapper {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color) !important;
+}
+
+a, .site-title, .post-link {
+  color: var(--link-color) !important;
+}
+
+.post-meta {
+  color: var(--text-color) !important;
+  opacity: 0.8;
+}
+
+/* 4. Estilo moderno para el botón flotante de Modo Oscuro */
+#theme-toggle {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  z-index: 99999 !important;
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 10px 18px !important;
+  border-radius: 30px !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+#theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+  opacity: 0.9;
+}

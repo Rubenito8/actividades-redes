@@ -1,0 +1,25 @@
+<header class="site-header" role="banner">
+  <div class="wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 25px 0;">
+    
+    <!-- Título del blog centrado -->
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" style="margin-bottom: 10px; font-weight: bold;">
+      {{ site.title | escape }}
+    </a>
+
+    <!-- Menú de navegación centrado -->
+    {%- if site.pages -%}
+      <nav class="site-nav">
+        <div class="trigger" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          {%- for page in site.pages -%}
+            {%- if page.title -%}
+              <a class="page-link" href="{{ page.url | relative_url }}" style="margin: 0;">
+                {{ page.title | escape }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </nav>
+    {%- endif -%}
+
+  </div>
+</header>

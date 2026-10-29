@@ -1,0 +1,52 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("theme-toggle")) return;
+
+    const button = document.createElement("button");
+    button.id = "theme-toggle";
+    button.innerText = "🌙 Modo Oscuro";
+    
+    // Función para aplicar los colores directamente
+    function applyTheme(isDark) {
+      if (isDark) {
+        // Fondo negro puro / gris muy oscuro y texto blanco claro
+        document.body.style.backgroundColor = "#121212";
+        document.body.style.color = "#e0e0e0";
+        
+        document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p, li, span, .site-title").forEach(el => {
+          el.style.color = "#e0e0e0";
+        });
+        
+        button.innerText = "☀️ Modo Claro";
+        localStorage.setItem("theme", "dark");
+      } else {
+        // Modo claro original
+        document.body.style.backgroundColor = "#f9fafb";
+        document.body.style.color = "#1f2937";
+        
+        document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p, li, span, .site-title").forEach(el => {
+          el.style.color = ""; // Restablecer al original
+        });
+        
+        button.innerText = "🌙 Modo Oscuro";
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    // Comprobar si ya estaba guardado en modo oscuro
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      applyTheme(true);
+    }
+
+    // Evento al hacer clic
+    button.addEventListener("click", function() {
+      const isCurrentlyDark = localStorage.getItem("theme") === "dark";
+      applyTheme(!isCurrentlyDark);
+    });
+
+    // Insertar el botón en la navegación
+    const target = document.querySelector(".site-nav") || document.querySelector("header") || document.body;
+    target.appendChild(button);
+  });
+</script>
